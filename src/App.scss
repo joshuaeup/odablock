@@ -1,0 +1,14 @@
+// Page Styles
+@import "./styles/page_styles/landing.scss";
+@import "./styles/page_styles/join.scss";
+@import "./styles/page_styles/new.scss";
+@import "./styles/page_styles/game.scss";
+
+// Component Styles
+@import "./styles/component_styles/card.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}

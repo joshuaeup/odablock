@@ -1,0 +1,91 @@
+@use "../assets.scss" as app;
+
+#game {
+  background-color: app.$background-color;
+  display: grid;
+
+  #player-cams {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+    grid-gap: 5px;
+    .player-cam-container {
+      display: grid;
+      justify-self: center;
+
+      height: 35vh;
+      width: 30vw;
+
+      .player-cam {
+        height: 28vh;
+        width: 80%;
+        border-radius: app.$cam-radius;
+        justify-self: center;
+      }
+    }
+
+    .controls-cam-container {
+      display: grid;
+      justify-self: center;
+      height: 40vh;
+      width: 30vw;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        color: app.$base-text-color;
+      }
+    }
+
+    .host-cam-container {
+      display: grid;
+      justify-self: center;
+      height: 35vh;
+      width: 30vw;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      .host-cam {
+        height: 28vh;
+        width: 80%;
+        border-radius: app.$cam-radius;
+        justify-self: center;
+      }
+    }
+  }
+
+  #player-card-container,
+  .player-card-container__minimized {
+    height: 15vh;
+    width: 30vw;
+    background-color: #fd6131;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+
+    .player-card {
+      height: 12vh;
+      justify-self: center;
+      align-self: center;
+      border-radius: app.$cam-radius;
+    }
+  }
+
+  .player-card-container__minimized {
+    height: 7vh;
+    width: 80%;
+
+    .player-card {
+      height: 5vh;
+      justify-self: center;
+      align-self: center;
+      border-radius: app.$cam-radius;
+    }
+  }
+}

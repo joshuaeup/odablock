@@ -1,0 +1,44 @@
+@use "../assets.scss" as app;
+
+#joinGame {
+  background-color: app.$background-color;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  #joinGame-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-gap: 3rem;
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      grid-gap: 3rem;
+      .joinGame-container-input,
+      #joinGame-container-button {
+        height: 5rem;
+        width: 30rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .joinGame-container-input {
+        border-radius: app.$input-radius;
+      }
+
+      #joinGame-container-button {
+        border-radius: app.$button-radius;
+        width: 10rem;
+        justify-self: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
