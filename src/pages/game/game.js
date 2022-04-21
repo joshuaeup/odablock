@@ -43,7 +43,8 @@ const Game = () => {
           />
         </div>
         <div className="controls-cam-container">
-          <h1>Controls Go Here</h1>
+          <h1>Select player you want to vote off</h1>
+          <button className="game-interaction-button">Cast Vote</button>
         </div>
         {players.map(() => {
           return (
