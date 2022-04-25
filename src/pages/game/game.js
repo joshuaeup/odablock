@@ -46,17 +46,17 @@ const Game = () => {
           <h1>Select player you want to vote off</h1>
           <button className="game-interaction-button">Cast Vote</button>
         </div>
-        {players.map(() => {
+        {players.map((player, index) => {
           return (
-            <div className="player-cam-container">
+            <div className="player-cam-container" key={index}>
               <img
                 className="player-cam"
                 alt="player cam"
                 src="https://media.discordapp.net/attachments/940763097193394177/965721186539565136/unknown.png"
               />
               <section className="player-card-container__minimized">
-                {cards.map(() => {
-                  return <Card />;
+                {cards.map((card, index) => {
+                  return <Card key={index} />;
                 })}
               </section>
             </div>
@@ -64,8 +64,8 @@ const Game = () => {
         })}
       </div>
       <section id="player-card-container">
-        {cards.map(() => {
-          return <Card />;
+        {cards.map((card, index) => {
+          return <Card key={index} />;
         })}
       </section>
     </div>
