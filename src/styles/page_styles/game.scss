@@ -20,8 +20,8 @@
       width: 30vw;
 
       .player-cam {
-        height: 28vh;
-        width: 80%;
+        height: 100%;
+        width: 100%;
         border-radius: app.$cam-radius;
         justify-self: center;
       }
@@ -29,6 +29,7 @@
 
     .controls-cam-container {
       display: grid;
+      text-align: center;
       justify-self: center;
       height: 40vh;
       width: 30vw;
@@ -39,6 +40,16 @@
 
       h1 {
         color: app.$base-text-color;
+        padding: 0;
+        margin: 0;
+      }
+
+      .game-interaction-button {
+          height: 3rem;
+          width: auto;
+          border-radius: app.$button-radius;
+          font-size: 1.5rem;
+          cursor: pointer;
       }
     }
 
@@ -51,8 +62,8 @@
       grid-row: 1 / 2;
 
       .host-cam {
-        height: 28vh;
-        width: 80%;
+        height: 95%;
+        width: 100%;
         border-radius: app.$cam-radius;
         justify-self: center;
       }
@@ -61,31 +72,96 @@
 
   #player-card-container,
   .player-card-container__minimized {
-    height: 15vh;
-    width: 30vw;
     background-color: #fd6131;
     display: grid;
     justify-self: center;
     grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
+    justify-content: center;   
+  }
+
+  #player-card-container{
+    height: 15vh;
+    width: auto;
 
     .player-card {
       height: 12vh;
+      width: 7vw;
+
       justify-self: center;
       align-self: center;
       border-radius: app.$cam-radius;
     }
+
+    .card {
+      width: 7vw;
+      height: 12vh;
+    }
+  }
+
+  #player-card-container {
+    grid-gap: 1rem;
   }
 
   .player-card-container__minimized {
     height: 7vh;
-    width: 80%;
+    width: 100%;
 
     .player-card {
       height: 5vh;
+      width: 3vw;
       justify-self: center;
       align-self: center;
       border-radius: app.$cam-radius;
     }
+
+    .card {
+      width: 3vw;
+      height: 5vh;
+    }
   }
+}
+
+
+.card-container {
+  -webkit-perspective: 500px;
+          perspective: 500px;
+          display: grid;
+          justify-content: center;
+}
+
+.card {
+  -webkit-transition: -webkit-transform 0.7s;
+          transition: transform 0.7s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.back {
+  -webkit-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+}
+
+/*Custom Styles*/
+
+.card {
+  width: auto;
+  margin: 10px;
+}
+
+
+.front, .back {
+box-shadow: 0 1px 6px 0;
+position: absolute;
+width: 100%;
+top: 0;
+bottom: 0;
+}
+
+img {
+display: block;
 }
