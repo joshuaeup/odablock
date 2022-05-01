@@ -1,12 +1,13 @@
 @use "../assets.scss" as app;
 
 #game {
-  background-color: app.$background-color;
+  background: linear-gradient(app.$background-color, #c3111d) ;
   display: grid;
 
   #player-cams {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
     align-items: center;
     height: 85vh;
@@ -16,12 +17,14 @@
       display: grid;
       justify-self: center;
 
-      height: 35vh;
+      height: 100%;
       width: 30vw;
+      grid-template-rows: 1fr minmax(auto, 30%);
 
       .player-cam {
-        height: 100%;
+        height: 90%;
         width: 100%;
+        align-self: center;
         border-radius: app.$cam-radius;
         justify-self: center;
       }
@@ -56,7 +59,6 @@
     .host-cam-container {
       display: grid;
       justify-self: center;
-      height: 35vh;
       width: 30vw;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -66,13 +68,15 @@
         width: 100%;
         border-radius: app.$cam-radius;
         justify-self: center;
+        align-self:center;
       }
     }
   }
 
   #player-card-container,
   .player-card-container__minimized {
-    background-color: #fd6131;
+    // background-color: #fd6131;
+    background-color: transparent;
     display: grid;
     justify-self: center;
     grid-template-columns: repeat(5, 1fr);
@@ -103,21 +107,28 @@
   }
 
   .player-card-container__minimized {
-    height: 7vh;
+    height: 90%;
     width: 100%;
 
-    .player-card {
-      height: 5vh;
-      width: 3vw;
-      justify-self: center;
-      align-self: center;
-      border-radius: app.$cam-radius;
+
+    .card-container {
+      width: 100%;
+
+      .player-card {
+        height: 100%;
+        width: 4rem;
+        justify-self: center;
+        align-self: center;
+        border-radius: app.$cam-radius;
+      }
+  
+      .card {
+        width: 4rem;
+        height: 100%;
+      }
     }
 
-    .card {
-      width: 3vw;
-      height: 5vh;
-    }
+   
   }
 }
 
@@ -150,7 +161,7 @@
 
 .card {
   width: auto;
-  margin: 10px;
+  // margin: 10px;
 }
 
 
