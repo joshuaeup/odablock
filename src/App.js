@@ -8,18 +8,22 @@ import NewGame from "./pages/new-game/new-game";
 import Game from "./pages/game/game";
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Landing />}></Route>
-          <Route exact path="/join-game" element={<JoinGame />}></Route>
-          <Route exact path="/new-game" element={<NewGame />}></Route>\
-          <Route exact path="/game" element={<Game />}></Route>
-        </Routes>
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<Landing />}></Route>
+                    <Route
+                        exact
+                        path="/join-game"
+                        element={<JoinGame />}
+                    ></Route>
+                    <Route exact path="/new-game" element={<NewGame />}></Route>
+                    \<Route exact path="/game" element={<Game />}></Route>
+                </Routes>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
